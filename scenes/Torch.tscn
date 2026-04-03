@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bywbagjcjto5g"]
+
+[ext_resource type="Script" uid="uid://ctlaciqavvsb6" path="res://scripts/torch.gd" id="1_dw1iy"]
+[ext_resource type="Script" uid="uid://r45wue8efk72" path="res://scripts/omni_light_3d.gd" id="1_hbdl4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hnl4"]
+albedo_color = Color(0.28627452, 0.13333334, 0.003921569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4up3"]
+albedo_color = Color(1, 0.7019608, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5wq3"]
+albedo_color = Color(0.28627452, 0.13333334, 0.003921569, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hbdl4"]
+radius = 0.05810547
+
+[node name="Torch" type="Area3D" unique_id=900614781]
+script = ExtResource("1_dw1iy")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=896118065]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=836955579]
+radius = 0.053710938
+material = SubResource("StandardMaterial3D_4hnl4")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1209699221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96617305, 0)
+radius = 0.064453125
+height = 0.2783203
+material = SubResource("StandardMaterial3D_y4up3")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1364305191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8085823, 0)
+radius = 0.08496094
+height = 0.049736023
+material = SubResource("StandardMaterial3D_w5wq3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1485768462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12742138, 2.3412895, 0)
+light_color = Color(1, 0.54901963, 0, 1)
+light_energy = 3.0
+omni_range = 4.025485
+script = ExtResource("1_hbdl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1219568825]
+shape = SubResource("CylinderShape3D_hbdl4")

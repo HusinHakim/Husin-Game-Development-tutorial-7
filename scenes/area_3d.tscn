@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dr5yel1x2qhb5"]
+
+[ext_resource type="Script" uid="uid://bg0bss6d8i0v2" path="res://scripts/area_3d.gd" id="1_nhnym"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cemll"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ebbpo"]
+
+[node name="Area3D" type="Area3D" unique_id=1927485494]
+script = ExtResource("1_nhnym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1985345491]
+shape = SubResource("SphereShape3D_cemll")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=379875795]
+mesh = SubResource("SphereMesh_ebbpo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

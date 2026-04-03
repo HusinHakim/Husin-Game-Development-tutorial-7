@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://chhiye1r3mxyd"]
+
+[ext_resource type="PackedScene" uid="uid://bjvvc4yryfqdq" path="res://scenes/Player.tscn" id="1_gpsl1"]
+[ext_resource type="PackedScene" uid="uid://dltqory4o1xju" path="res://scenes/World 1.tscn" id="2_kbmnf"]
+[ext_resource type="PackedScene" uid="uid://dr5yel1x2qhb5" path="res://scenes/area_3d.tscn" id="3_gpsl1"]
+[ext_resource type="PackedScene" uid="uid://bywbagjcjto5g" path="res://scenes/Torch.tscn" id="4_kbmnf"]
+[ext_resource type="PackedScene" uid="uid://nyft6g5pvwgf" path="res://scenes/HotbarUI.tscn" id="5_8iqp6"]
+
+[node name="Node3D" type="Node3D" unique_id=1400601029]
+
+[node name="World 1" parent="." unique_id=858753709 instance=ExtResource("2_kbmnf")]
+
+[node name="Player" parent="." unique_id=1934001207 instance=ExtResource("1_gpsl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4368463, -22.74978)
+
+[node name="Camera3D" parent="Player/Head" parent_id_path=PackedInt32Array(1934001207, 393151913) index="0" unique_id=431416708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.056397915, -0.4632702)
+fov = 86.13204
+
+[node name="InteractPrompt" parent="Player/InteractUI" index="0"]
+anchors_preset = 8
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2046576480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7144, 0.0330887)
+light_energy = 10.0
+omni_range = 50.0
+
+[node name="Area3D" parent="." unique_id=1927485494 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(21.335, 0, 0, 0, 21.335, 0, 0, 0, 21.335, 1.5528088, -20.701902, -6.753187)
+
+[node name="Area3D2" parent="." unique_id=402276622 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(21.335, 0, 0, 0, 21.335, 0, 0, 0, 21.335, 1.5528088, 3.6748352, 34.47586)
+sceneName = "WinScreen"
+
+[node name="Area3D3" parent="." unique_id=900614781 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9299603, -3.7237968, -17.598387)
+
+[node name="CanvasLayer" parent="." unique_id=1992913249 instance=ExtResource("5_8iqp6")]
+
+[editable path="Player"]

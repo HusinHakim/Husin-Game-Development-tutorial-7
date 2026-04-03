@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://nyft6g5pvwgf"]
+
+[ext_resource type="Script" uid="uid://dfng2igp6r263" path="res://InventoryUI.gd" id="1_opp11"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1992913249]
+script = ExtResource("1_opp11")
+
+[node name="Hotbar" type="HBoxContainer" parent="." unique_id=1068698558]
+offset_right = 40.0
+offset_bottom = 40.0
